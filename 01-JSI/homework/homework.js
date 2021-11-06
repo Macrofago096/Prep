@@ -45,11 +45,13 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (str1.lenght === str2.lenght) {
-    return true;
-  } else {
-    return false;
-  }
+  // if(str1.lenght === str2.lenght){
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+  // // Opción 2:
+  return str1.length === str2.length;
 }
 
 function menosQueNoventa(num) {
@@ -78,9 +80,9 @@ function elevarAlCuadrado(num) {
   // Devuelve el valor de "num" elevado al cuadrado
   // Ojo: No es raiz cuadrada!
   // // Tu código:
-  // // return num * num;
+  return num * num;
   // return num ** exponent;
-  return Math.pow (num, exponent)
+  // return Math.pow (num, exponent)
 }
 
 function elevar(num, exponent) {
@@ -130,11 +132,11 @@ function esVocal(letra){
   //Verificar si el usuario ingresó un string de más de un carácter y, en ese caso, informarle 
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   // Tu código:
-  if(letra.length > 1){
-    return 'Dato incorrecto';
-  } 
-  if(letra === a || letra === e || letra === i || letra === o || letra === u){
-    return 'Es vocal'
+  if(letra.length > 1)
+  return 'Dato incorrecto';
+
+  if(letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u') {
+    return 'Es vocal';
   }
 }
 
@@ -172,30 +174,35 @@ function colors(color) {
   //Usar el statement Switch.
   // Tu código:
   // switch(color){
-  //   case 'Blue':
-  //     return 'This is Blue';
-  //   case 'Red':
-  //     return 'This is Red';
-  //   case 'Green':
-  //     return 'This is Green';
+  //   case 'blue':
+  //     return 'This is blue';
+  //   case 'red':
+  //     return 'This is red';
+  //   case 'green':
+  //     return 'This is green';
+  //   case 'orange':
+  //     return 'This is orange';
   //   default:
   //     return'Color not found';
   // }
-  // var mje;
-  // switch(color){
-  //   case 'Blue':
-  //     mje 'This is Blue';
-  //     break;
-  //   case 'Red':
-  //     mje 'This is Red';
-  //     break;
-  //   case 'Green':
-  //     mje 'This is Green';
-  //     break;
-  //   default:
-  //     mje 'Color not found';
-  // }
-  // return mje;
+  var mje;
+  switch(color) {
+    case 'blue':
+      mje = 'This is blue';
+      break;
+    case 'red':
+      mje = 'This is red';
+      break;
+    case 'green':
+      mje = 'This is green';
+      break;
+    case 'orange':
+      mje = 'This is orange';
+      break;
+    default:
+      mje = 'Color not found';
+  }
+  return mje;
 }
 
 function esDiezOCinco(numero) {
@@ -228,18 +235,33 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
   // Tu código:
-    if (numero === o || numero === 1 ){
-      return false;
-    }
+//     if(numero === 0 || numero === 1 ){
+//       return false;
+//     }
+//     for (let i = 2; i < numero; i++){
+//       if(numero % i === 0){
+//         return false;
+//       } else {
+//         return true;
+//       }
+//     }
+// }
 
-    for (let i = 2; i < numero; i++){
-      if(numero % i === o){
-        return false;
-      } else {
-        return true;
+  let primos = true
+  if(numero <=1){
+    primos = false;
+    } else {
+      for (let i = 2; i < numero; i++) {
+        if ((numero % i) === 0){
+          primos = false;
+          break;
+        } else{
+          primos = true;
+        }
       }
     }
-}
+    return primos;  
+   }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
@@ -247,20 +269,21 @@ function doWhile(numero) {
   //Pueden usar un while o un bucle do ... while (Investigarlo si quieren hacerlo de la segunda forma)
   // Tu código:
   
-  // var i = 0
-  // while(i < 8){
-  //   numero = numero + 5;
-  //   i++;
-  // }  
-  // return numero;
   var i = 0
-  do {
-    numero = numero + 5; 
+  while(i < 8){
+    numero = numero + 5;
     i++;
-  } while (i < 8);
+  }  
   return numero;
-  }
-  
+}
+  // var i = 0
+  // do {
+  //   numero = numero + 5; 
+  //   i++;
+  // } while (i < 8);
+  // return numero;
+  // }
+
 // No modificar nada debajo de esta línea
 // --------------------------------
 
